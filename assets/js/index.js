@@ -28,8 +28,11 @@ function getUserInfo() {
             // 渲染用户信息(头像和名称)
             renderAvatar(res.data)
         },
-        // jQuery发ajax complate都会被调取用
-        // complete: function (res) {
+        // 解决直接通过域名无需登录访问后台的问题
+        // 当 Ajax 请求完成时注册要调用的处理程序。这是一个 Ajax 事件。
+        // jQuery发ajax 请求完成时,complate都会被触发调取用
+        // res为ajax请求完成时返回的结果.无论请求成功与否都要返回 
+        // complete: functsion (res) {
         //     // console.log(res);
         //     if (res.responseJSON.status === 1 && res.responseJSON.message === '身份认证失败！') {
         //         localStorage.removeItem('token')

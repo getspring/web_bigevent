@@ -1,8 +1,12 @@
 // 由于每次发起ajax请求都要手动拼接请求根目录和具体的请求地址
 // 即麻烦又难以维护
 
-// 每次利用$.ajax $.get $.post发起请求前,都会先调用ajaxPrefilter这个函数
+// 在每个请求之前被发送ajax之前进行预处理, 设置自定义Ajax选项或修改现有选项
+
+// 每次利用$.ajax $.get $.post发起请求前,都会先调用ajaxPrefilter(预过滤器)这个函数 设置自定义Ajax选项或修改现有选项。
 // 拿到我们调用ajax的配置对象
+
+// options 是请求的选项
 
 
 $.ajaxPrefilter(function (options) {
